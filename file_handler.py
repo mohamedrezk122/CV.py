@@ -96,6 +96,8 @@ def write_generic_entry( title:str,  year:str,
             points_string +=  points[point] + r"\\"
             # points_string += "\n\t" 
 
+        points_string = points_string[:-2]
+        
     replacements = { "[title]" : title , 
                      "[year]"  : year  ,
                      "[org]"   : org   ,
