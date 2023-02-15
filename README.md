@@ -142,5 +142,5 @@ section3:
 - if you violated the naming convention of entry, section, or multicol, the field will not be written to the PDF file so double check.
 - if two same-level fields have the same name the latter only will be written.
 - the order used by the script is positional order meaning that regardless the digit in front of the field , the script processes the file in a chronological order.
-- if there is a ```$``` , ```&``` or ```%``` you need to escape them and put the whole string in ```""``` like so ```"some text  \\$ some text"```
+- if there is a ```$``` , ```&``` or ```%``` you need to escape it and put the whole string in ```""``` like so ```"some text  \\$ some text"```
  
