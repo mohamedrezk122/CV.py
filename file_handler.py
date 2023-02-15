@@ -51,12 +51,12 @@ def write_info( name:str , points:dict)-> str :
     
     info_template = load_format_file("info")
     points_string =""
-    if points["href"] : 
-        for url in points["href"]:
+    if points["url"] : 
+        for url in points["url"]:
             points_string += r"\href{[point]}{\underline{[title]}}".replace(
                                                                 "[title]" , str(url)).replace(
-                                                                "[point]", str(points['href'][url])) + " | "
-        points.pop("href")
+                                                                "[point]", str(points['url'][url])) + " | "
+        points.pop("url")
     for point in points : 
         if points[point] is not None :
             points_string += str(points[point]) + r" | "
@@ -72,6 +72,17 @@ def write_section(title:str) -> str:
     section_template = load_format_file("section")
     return section_template.replace('[title]' , title)
 
+def write_url(entry:dict, content:str):
+
+    try:
+        for url in entry["url"] :
+            link = r"\href{[url]}{\underline{[title]}}".replace("[title]" ,
+                             url).replace("[url]", entry["url"][url])
+            content = content.replace(f"[{url}]" , link)
+    
+    except:
+        pass
+    return content
 
 def write_generic_entry( title:str,  year:str,
                          org="", points:dict=None )-> str:
@@ -156,14 +167,15 @@ def write_tex_file(file_content:dict)-> str :
                             year =  subfield["year"] if subfield["year"] else ""
                             org =  subfield["org"] if subfield["org"] else ""
                             points = subfield["points"] if subfield["points"] else None
-                            tex_content += write_generic_entry(subfield["title"] , year ,  org , points)
-                        
+                            entry_content  = write_generic_entry(subfield["title"] , year ,  org , points)
+                            entry_content  = write_url(subfield , entry_content)
+                            tex_content+= entry_content 
                         elif bool(multicol_pattern.match(sub)):
                             subfield = file_content[field][sub] 
                             points = subfield["points"] if subfield["points"] else None
                             cols = subfield["cols"] if subfield["cols"] else 2 
                             tex_content += write_multi_column_entry(cols , points)
-    
+
         return file_header.replace("[content]" , tex_content)
     except:
         print("not able to process yaml data , please check the file and try again")

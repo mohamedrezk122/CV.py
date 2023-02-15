@@ -1,4 +1,4 @@
 [x] - orgnisation format 
 [x] - multi snippets formats 
-[ ] - urls(href) inside decription 
+[x] - urls(href) inside description 
 

@@ -3,7 +3,7 @@ info:
   phone: "01222448102"
   email: "mohrizq895@gmail.com"
   secondemail: "2002114@eng.asu.edu.eg"
-  href:
+  url:
     LinkedIn: "https://www.linkedin.com/in/mohamed-m-rezk/"
     Github: "https://github.com/mohamedrezk122"
     Blog : "https://mohamedrezk122.github.io/"
@@ -40,9 +40,8 @@ section2 :
       c: "- Particle Swarm Optimization"
       d: "- Simulated Annealing"
       e: "- Simplex (Nelder-Mead) Method"
-
-    # href:
-    #   code: fhshfgsdhfishiva@
+    url:
+      code: "https://mohamedrezk122.github.io/"
 
 #   entry2 : 
 #     title: Video Editor
