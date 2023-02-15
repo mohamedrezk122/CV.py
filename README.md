@@ -5,6 +5,10 @@
 
 ## Requirements 
 
+- [optional] git, or you can download the source as ```.zip``` from github gui.
+```
+git clone https://github.com/mohamedrezk122/CV.py
+```
 - [Python 3](https://www.python.org/downloads/)  and pip 
 - All other required dependencies can be installed through the following command, open ```cmd```  if you are on Windows, or ```terminal``` if you are Linux, Mac, or BSD. 
 
