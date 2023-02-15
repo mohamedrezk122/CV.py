@@ -15,20 +15,6 @@ def create_url(parsed_url:str) -> str:
     return host + parsed_url
 
 
-
-# def open_path(path:str):
-
-#     platform = sys.platform 
-
-#     if "linux" in platform or   "linux2" in platform :
-#         pass
-#     elif platform in ["cygwin" , "msys" , "win32"]:
-#         subprocess.Popen(fr'explorer /select, {path}')
-
-#     elif platform == "darwin":
-#         pass
-
-
 def download_pdf_file(url:str, out):
 
     try:
@@ -38,7 +24,7 @@ def download_pdf_file(url:str, out):
             print("Writing your CV..")
             file.write(req.content)
             print(f"Your CV PDF file has been written sucessfully to: \n {out}")
-            # show_in_file_manager(path)
+            show_in_file_manager(path)
     except HTTPError as err:
         print(f'A HTTPError was thrown: {err.response.status_code}')
         print("Maybe the server is down, please try again later")
