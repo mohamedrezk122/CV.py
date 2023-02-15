@@ -1,0 +1,84 @@
+info:
+  name: "Mohamed Mahmoud Rezk "
+  phone: "01222448102"
+  email: "mohrizq895@gmail.com"
+  secondemail: "2002114@eng.asu.edu.eg"
+  url:
+    LinkedIn: "https://www.linkedin.com/in/mohamed-m-rezk/"
+    Github: "https://github.com/mohamedrezk122"
+    Blog : "https://mohamedrezk122.github.io/"
+
+section1 :
+  title :  Education
+
+  entry1 : 
+    title: Bachelor of Science in Computer Engineering
+    org:  Ain Shams University
+    year: Class 2025
+    points:
+      a: "Junior / CGPA: 3.7 / 4.0"
+
+  entry2 : 
+    title: High School
+    org : Dakahlia STEM School
+    year: Class 2020
+    points:
+      a: "CGPA: 4.0 / 4.0 (1st Rank)"
+
+
+section2 :
+  title :   Experience 
+
+  entry1 : 
+    title: "Research Intern"
+    org:  "ASU - Dynamic Systems \\& Digitalisation Cluster"
+    year: "Aug-Oct-2022"
+    points:
+      a: "Project title : Mapping of artificial acoustic emission sources on wind turbine blades "
+      b: "I implemented several optimization algorithms with some bench-markings like:"
+      c: "- Particle Swarm Optimization"
+      d: "- Simulated Annealing"
+      e: "- Simplex (Nelder-Mead) Method"
+      f: "- [Code] / [Report]"
+    url:
+      Code: "https://github.com/mohamedrezk122/AE-software.git"
+      Report: "https://drive.google.com/file/d/1nbaeNMwKy77YT5OaDclhSPKGJ-21Y4Bf/view?usp=share_link"
+
+  entry2 : 
+    title: Video Editor
+    org : CAMTECH CNC
+    year: Mar-Apr-2022
+    points:
+      1: Video editing for engineering courses, I used FFmpeg for bulk conversion,
+          Davinci Resolve scripting, and python to edit and create high-quality videos.
+
+section3 :
+  title :   "Hackathons \\& Competitions"
+
+  entry1 : 
+    title: "NASA Space Apps Cairo"
+    year: "Aug-Oct-2022"
+    points:
+      a: "- Implementing an International Space Station (ISS) tracking system based on the laws of orbital mechanics and astronomical algorithms."
+      b: "- People Choice Award Nominee"
+      c: "- 500\\$ AWS Credit Points Prize"
+      d: "- [Code]"
+    url:
+      Code: "https://github.com/mohamedrezk122/Apollo"
+
+
+
+
+section4 :
+  title : Skills
+
+  multicol1:
+    cols: 3
+    points:
+      a: Python
+      b: "C/C++"
+      c: Bash
+      d: "Linux/UNIX"
+      f : "\\LaTeX"
+      g : Simulation
+      d : Research
