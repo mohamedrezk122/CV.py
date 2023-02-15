@@ -61,8 +61,7 @@ def write_info( name:str , points:dict)-> str :
         if points[point] is not None :
             points_string += str(points[point]) + r" | "
 
-    points_string = points_string[:-1]
-    
+    points_string = points_string[:-3]
     return info_template.replace(
                                 "[points]" , points_string).replace(
                                 "[name]" , name)
