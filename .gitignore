@@ -1,0 +1,7 @@
+output/
+__pycache__/
+.mypy_cache/
+main.tex
+notes.tex
+test.tex
+

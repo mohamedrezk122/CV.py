@@ -1,0 +1,96 @@
+info:
+  name: "Mohamed Mahmoud Rezk "
+  phone: "01222448102"
+  email: "mohrizq895@gmail.com"
+  secondemail: "2002114@eng.asu.edu.eg"
+  href:
+    LinkedIn: "https://www.linkedin.com/in/mohamed-m-rezk/"
+    Github: "https://github.com/mohamedrezk122"
+    Blog : "https://mohamedrezk122.github.io/"
+
+section1 :
+  title :  Education
+
+  entry1 : 
+    title: Bachelor of Science in Computer Engineering
+    org:  Ain Shams University
+    year: Class 2025
+    points:
+      a: "Junior / CGPA: 3.70 / 4.0"
+
+  entry2 : 
+    title: High School
+    org : Dakahlia STEM School
+    year: Class 2020
+    points:
+      a: "CGPA: 3.70 / 4.0"
+
+
+
+section2 :
+  title :   Experience 
+
+  entry1 : 
+    title: "Research Intern"
+    org:  "ASU - Dynamic Systems and Digitalisation Cluster"
+    year: "Aug-Oct-2022"
+    points:
+      a: "Project title:Mapping of artificial acoustic emission sources on wind turbine blades "
+      b: "I implemented several optimization see my [code] algorithms with some bench-markings like:"
+      c: "- Particle Swarm Optimization"
+      d: "- Simulated Annealing"
+      e: "- Simplex (Nelder-Mead) Method"
+
+    # href:
+    #   code: fhshfgsdhfishiva@
+
+#   entry2 : 
+#     title: Video Editor
+#     org : CAMTECH CNC
+#     year: Mar-Apr-2022
+#     points:
+#       1: Video editing for engineering courses, I used FFmpeg for bulk conversion,
+#           Davinci Resolve scripting, and python to edit and create high-quality videos.
+
+
+# section3 :
+#   title : skills
+
+#   multicol1:
+#     cols: 2
+#     points:
+#       a: math
+#       b: git
+#       c: unix
+#       d: ggg
+#       f :  foiajf
+#       g : dsfuiadf
+#       d : dafjdf
+#       k : sdjfn 
+#       h : sdof 
+#       s : idjf 
+#       e : vdsvjd 
+#       dd : sdjoovjpv
+#       gg : fldoajf 
+
+
+
+
+# section5 :
+#   title :  work experince 
+
+#   entry1 : 
+#     title: research intern
+#     org:  ain shams uni
+#     year: 2020-2022
+#     points:
+#       a: organise data
+#       b: write code
+
+#   entry2 : 
+#     title: research ientern
+#     org : cairo uni
+#     year: 2020-2022
+#     points:
+#       1: organise data
+#       2: write code
