@@ -1,7 +1,7 @@
 # CV.py
 <p align="center"><img src="https://user-images.githubusercontent.com/50466262/218974424-28ddff01-76d2-4258-bda0-3b89cdbea5d3.png" /></p>
 
-``` CV.py```  is  a simple conversion of yaml file which contains the CV information in a hierarchical order to nice and elegant LaTeX file that is fed to an API for compilation. And you have your CV PDF file on local machine as simple as that. The main point is that you don not have to have LaTeX or know how it is written , just enjoy the good-looking , well-structured, and fault-proof PDF file. 
+``` CV.py```  is  a simple conversion of yaml file which contains the CV information in a hierarchical order to nice and elegant LaTeX file that is fed to an API for compilation. And you have your CV PDF file on local machine as simple as that. The main point is that you do not have to have LaTeX or know how it is written , just enjoy the good-looking , well-structured, and fault-proof PDF file. 
 
 ## Requirements 
 
@@ -29,7 +29,7 @@ The script can be used as follows:
 python3 cv.py input.yaml -o output.pdf -t output.tex
 ```
 
-However, ```-o``` and ```-t``` are optional arguments , if they are not specified  like the command below , the script generate the PDF file under the name of  ```output.pdf``` likewise,  ```output.tex```.    
+However, ```-o``` and ```-t``` are optional arguments , if they are not specified  like the command below , the script generates the PDF file under the name of  ```output.pdf``` likewise,  ```output.tex```.    
 
 ``` shell
 python3 cv.py input.yaml 
@@ -39,17 +39,17 @@ All output files will be written in ```output/``` directory (folder), which will
 
 ## yaml file format
 
-Please browse ```template.yaml``` for additional help on  how the yaml file is properly formatted, also you can see the corresponding PDF file produced by the script under the name ``` template.pdf```
+Please browse ```template.yaml``` for additional help on  how the yaml file is properly formatted, also you can see the corresponding PDF file produced by the script under the name ```template.pdf```
 The supported structure of the file:
 
 ```info```, ```section```, ```entry``` , ```multicol```
 
 ###  ```info```  field 
 
-- it is one-time filed (written once)
-- name is required parameter 
+- it is one-time field (written once)
+- name is a required parameter 
 - you can add any number of information points / keys (like phone, work phone, etc.) 
-- points under ```url``` key takes the name of key and embed  the corresponding URL inside the key like so [Github]( "https://github.com/mohamedrezk122") 
+- points under ```url``` key takes the name of key and embed  the corresponding URL inside the key like so ("https://github.com/mohamedrezk122")[Github] 
 
 ```yaml
 info:
@@ -65,10 +65,10 @@ info:
 
 ###  ```section```  field 
 
-- section has to be unique , meaning no  two section have the same name , it shall take the form ```section+digit```  like ```section1``` or ```section+digit+digit``` like ```section12``` , these are the accepted format.  
+- section has to be unique , meaning no  two section have the same name , it shall take the form ```section+digit```  like ```section1``` or ```section+digit+digit``` like ```section12``` , these are the accepted formats.  
 - section must have ```title``` key
 - under section you can use either ```entry```  or ```multicol``` ( discussed below)
-- 
+
 ``` yaml
 section2 :
   title :   Experience 
@@ -89,7 +89,7 @@ section2 :
 
 ###  ```entry```  field 
 
-- entry has to be unique within the same section , meaning no  two entries have the same name under the same section , it shall take the form ```entry+digit```  like ```entry1``` or ```entry+digit+digit``` like ```entry12``` , these are the accepted format.  
+- entry has to be unique within the same section , meaning no  two entries have the same name under the same section , it shall take the form ```entry+digit```  like ```entry1``` or ```entry+digit+digit``` like ```entry12``` , these are the accepted formats.  
 - entry must have ```title``` key
 - the accepted  ```entry``` attributes are  ```title``` , ```org``` , ```year```,```points```,```url```
 
