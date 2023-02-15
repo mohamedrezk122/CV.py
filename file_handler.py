@@ -164,16 +164,32 @@ def write_tex_file(file_content:dict)-> str :
                         if bool(entry_pattern.match(sub)):
                             
                             subfield = file_content[field][sub] 
-                            year =  subfield["year"] if subfield["year"] else ""
-                            org =  subfield["org"] if subfield["org"] else ""
-                            points = subfield["points"] if subfield["points"] else None
+                            try:
+                                year =  subfield["year"] 
+                            except :
+                                year =  ""
+
+                            try:
+                                org =  subfield["org"] 
+                            except :
+                                org =  ""
+                            try:
+                                points =  subfield["points"] 
+                            except :
+                                points =  None
                             entry_content  = write_generic_entry(subfield["title"] , year ,  org , points)
                             entry_content  = write_url(subfield , entry_content)
                             tex_content+= entry_content 
                         elif bool(multicol_pattern.match(sub)):
                             subfield = file_content[field][sub] 
-                            points = subfield["points"] if subfield["points"] else None
-                            cols = subfield["cols"] if subfield["cols"] else 2 
+                            try:
+                                cols =  subfield["cols"] 
+                            except :
+                                cols = 3
+                            try:
+                                points =  subfield["points"] 
+                            except :
+                                points =  None
                             tex_content += write_multi_column_entry(cols , points)
 
         return file_header.replace("[content]" , tex_content)
