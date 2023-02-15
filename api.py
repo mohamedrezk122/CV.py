@@ -3,7 +3,7 @@ import urllib.parse
 import requests
 import sys 
 from showinfm import show_in_file_manager  
-
+import os
 
 def parse_url(tex_content:str):
     
