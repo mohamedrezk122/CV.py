@@ -138,6 +138,7 @@ section3:
 ```
 ## Notes and limitations 
 
+- you can edit margins through ```config.py```
 - if there is a ```:``` , colon inside the text your writing inside the yaml file you have to put the whole string inside quotations like so  ```"some text : some text"```
 - if you violated the naming convention of entry, section, or multicol, the field will not be written to the PDF file so double check.
 - if two same-level fields have the same name the latter only will be written.
