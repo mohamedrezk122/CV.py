@@ -2,6 +2,6 @@ output/
 __pycache__/
 .mypy_cache/
 main.tex
-notes.tex
+notes.txt
 test.tex
 
