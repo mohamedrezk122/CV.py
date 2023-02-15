@@ -67,9 +67,23 @@ section3 :
       Code: "https://github.com/mohamedrezk122/Apollo"
 
 
-
-
 section4 :
+  title :   "Awards \\& Honors" 
+
+  entry1 : 
+    title: "Summer of Math Exposition (SoME\\#2)"
+    year: "Aug-Oct-2022"
+    points:
+      a: "I was one of the top 100 entries in Summer of Math Exposition (SoME\\#2)
+organized by Grant Sanderson (3Blue1Brown), and Leios Labs. Also, I was in
+the top 25 non-video entries (articles, games,etc.)."
+      b: "- [Article]"
+    url:
+      Article: "https://mohamedrezk122.github.io/diffusion"
+
+
+
+section5 :
   title : Skills
 
   multicol1:
