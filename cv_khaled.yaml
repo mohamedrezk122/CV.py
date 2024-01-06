@@ -1,0 +1,94 @@
+info:
+  name: "Khaled Fahmy mohamed"
+  phone: "+201020407806"
+  email: "khaledfahmy345@gmail.com"
+  url:
+    LinkedIn: "https://www.linkedin.com/in/khaled-fahmy-704973163/"
+    Github: "https://github.com/khaledfahmy123"
+    Blog: "https://khaledfahmy123.github.io/the-void/"
+
+section1:
+  title: Education
+
+  entry1:
+    title: "Bachelor of Science in Computer Engineering"
+    org: "Zagazig University"
+    year: "Class 2025"
+    points:
+      a: "Junior / Excellent (CGPA 3.7/4)"
+
+section2:
+  title: Skills
+
+  multicol1:
+    cols: 3
+    points:
+      a: "HTML"
+      b: "CSS"
+      c: "Vanilla JS"
+      d: "SCSS"
+      e: "Node.js"
+      f: "React.js"
+      g: "PHP"
+      h: "MySQL"
+      i: "Three.js"
+      j: "Electron.js"
+      k: "LaTeX"
+      L: "Version Control (git)"
+
+section3:
+  title: "Experience And Projects"
+
+  entry1:
+    title: "Terrific Tapper (React, Node.js, Firebase)"
+    year: "Feb - Present (On going project)"
+    points:
+      a: "A progressive web app similar to TikTok where content creators create an account to upload 15 secs videos that will be reversed using FFmpeg (WebAssembly technology) and stored in a firebase database. On the other side, a player will choose one of the videos and click on the screen as fast as he can to play it forward, otherwise, it will play backward"
+      b: "-Try [Beta] Version"
+    url:
+      Beta: "https://game-shorts.netlify.app/"
+
+  entry2:
+    title: "E-Commerce Store (React, PHP MVC, MySQL)"
+    year: "Jan-2023"
+    points:
+      a: "An admin panel that allows a user to perform various CRUD operations such as add and delete products, built in MVC archticture"
+      b: "- [React_Code] / [PHP_Code]"
+    url:
+      React_Code: "https://github.com/khaledfahmy123/e-commerce-react"
+      PHP_Code: "https://github.com/khaledfahmy123/eCommerce_MVC"
+
+  entry3:
+    title: "The-Void (React)"
+    year: "May-2022"
+    points:
+      a: "An interactive personal blog I created using react.js to post my pop-science articles and videos, mainly in philosophy and physics, using some animations and simple graphics to deliver the idea in an elegant interactive way"
+      b: "- [Code] / [App]"
+    url:
+      Code: "https://github.com/khaledfahmy123/the-void"
+      App: "https://khaledfahmy123.github.io/the-void/"
+
+  entry4:
+    title: "Asteroid-Bent"
+    year: "Spe-2021"
+    points:
+      a: "Illustrating the light curve of Jupiter's rotating asteroids using a simulated environment built with blender-python API, electron.js, and Three.js"
+      b: "[Code]"
+    url:
+      Code: "https://github.com/khaledfahmy123/asteroid_bent"
+
+  entry5:
+    title: "Steak-House, Glint, Landing-X"
+    year: "Aug-2021"
+    points:
+      a: "Fully responsive single-page applications with React for a well-known Brands"
+      b: "Steak-House [Code1] / [App1]"
+      c: "Glint [Code2] / [App2]"
+      d: "Landing-X [Code3] / [App3]"
+    url:
+      Code1: "https://github.com/khaledfahmy123/steakhouse"
+      App1: "https://khaledfahmy123.github.io/steakhouse"
+      Code2: "https://github.com/khaledfahmy123/glint"
+      App2: "https://khaledfahmy123.github.io/glint"
+      Code3: "https://github.com/khaledfahmy123/Landing-X"
+      App3: "https://khaledfahmy123.github.io/Landing-X"

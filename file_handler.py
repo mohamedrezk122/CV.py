@@ -115,7 +115,7 @@ def write_column_entry(width:int , points:dict) -> str:
     if points is not None:
         for point in points:
             # points_string += "- "
-            points_string += points[point] + r"\\"
+            points_string += points[point] + r" \\ "
 
     replacements = { "[col_width]" : str(width) , 
                      "[points]": points_string}
