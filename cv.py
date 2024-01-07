@@ -1,7 +1,9 @@
+from termcolor import cprint
 import argparse 
 import os 
 from api import * 
-from file_handler import *
+from writer import *
+from reader  import *
 
 
 fig = r"""
@@ -14,13 +16,10 @@ fig = r"""
 --------------------------------------------------- 
 """
 
-try :
-    from termcolor import colored
-    print(colored(fig, 'cyan'))
-    print(colored(" \tThis script is written by Mohamed Rezk.\n", "green"))
-except ImportError as ie:
-    print(fig)
-    print("\tThis script is written by Mohamed Rezk.\n")
+
+cprint(fig, 'cyan')
+cprint(" \tThis script is written by Mohamed Rezk.\n", "green")
+
 
 parser = argparse.ArgumentParser()  
   
@@ -39,13 +38,13 @@ def main():
 
     if not os.path.isdir("./output"):
         os.mkdir("./output")
-    content = write_tex_file(load_yaml_file(input_filepath))
+    file_content_dict = load_yaml_file(input_filepath)
+    content = write_tex_file(file_content_dict)
     out =  cwd+"/output/"
-
-    if output_texfile is not None:
-        export_tex_file(content, out + output_texfile )
+    if output_texfile:
+        export_tex_file(content, out + output_texfile)
         
-    download_pdf_file(create_url(parse_url(content)) ,out+output_filename)
+    download_pdf_file(create_url(parse_url(content)) , out+output_filename)
 
 
 if __name__ == "__main__":
