@@ -1,14 +1,14 @@
 from termcolor import cprint
 
-def put_warning(msg:str) -> str:
+def put_warning(msg:str):
     cprint("WARNING: " , "yellow" , end="")
     print(msg)
 
-def put_error(msg:str) -> str:
+def put_error(msg:str):
     cprint("ERROR: ", "red" , end="")
     print(msg)
 
-def put_success(msg:str) -> str :
+def put_success(msg:str) :
     cprint("SUCCESS: ", "green", end="")
     print(msg)
 
