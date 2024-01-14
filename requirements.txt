@@ -2,3 +2,4 @@ pyyaml==6.0
 argparse==1.1
 termcolor
 show-in-file-manager
+requests-cache
