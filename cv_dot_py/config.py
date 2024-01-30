@@ -6,11 +6,16 @@ from cv_dot_py.primitives import batch_replace
 ROOT_DIR = Path(__file__).parent.parent
 DEFAULT_CONFIG_FILE = ROOT_DIR.joinpath('config.yaml')
 
-
+config_content = None
 def read_config(option: str) -> dict:
+    global config_content
+    # avoid reptitve calls to io 
+    if config_content :
+        return config_content[option] 
     config_file_path = DEFAULT_CONFIG_FILE
     with open(config_file_path, "r") as file:
-        return yaml.safe_load(file)[option]
+        config_content = yaml.safe_load(file)
+        return config_content[option]
 
 def adjust_document_margins(header: str) -> str:
     margins = read_config("margins")
@@ -26,3 +31,8 @@ def adjust_document_margins(header: str) -> str:
 
 # format id
 FORMAT = read_config("format")
+SECTION_ENTRY_SEP = read_config("section_entry_separation")
+SECTION_SECTION_SEP = read_config("section_section_separation")
+ENTRY_ENTRY_SEP = read_config("entry_entry_separation")
+AFTER_INFO_SEP = read_config("after_info_separation")
+INCLUDE_BAR = read_config("add_bar_next_to_section_title")

@@ -1,11 +1,31 @@
+# format number see snippets dir
+format : 2
+
+# pdf paper size
+geometry:
+  unit  : mm   # other values include in or cm 
+  width : 210  # default width for A4 paper
+  height: 297  # default height for A4 paper
+
+# pdf white margins
 margins:
-  unit   : cm
+  unit   : cm  # other values include in
   left   : 1.524
   right  : 1.524
   top    : 1.27
   bottom : 1.524  
 
-format : 1
-
-
+# amount of separation the info field in mm  
+after_info_separation: 2
+# amount of separation between an entry and section title in mm  
+section_entry_separation: 2  # also called after section sep
+# amount of separation between a section and another section title in mm  
+section_section_separation: 2  # also called before section sep
+# amount of separation between each entry in mm  
+entry_entry_separation: 3
+# thick bar beside the section title 
+add_bar_next_to_section_title: true
+# write links like this : https://mohamedrezk122.github.io/
+# instead of Blog 
+include_links_without_title: false
 
