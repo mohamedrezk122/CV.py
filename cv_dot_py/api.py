@@ -1,5 +1,8 @@
+import subprocess
+import requests
 import requests_cache
 import urllib.parse
+import os 
 
 from cv_dot_py.primitives import put_error, put_success
 
@@ -25,3 +28,16 @@ def download_pdf_file(url: str, out):
         put_error("Timed out")
     except requests.exceptions.HTTPError:
         put_error(f"Maybe the server is down, please try again later")
+
+
+def compile_tex_locally(input_file, compiler):
+    process = subprocess.Popen([
+        compiler,   
+        input_file+".tex"], 
+        stdout=subprocess.DEVNULL) # make the compilation quiet 
+    process.wait()
+    # cleanup compilation junk files
+    for ext in ["out", "aux", "log", "lof", "gz", "toc", "bak~"]:
+        junk = f"{input_file}.{ext}"
+        if os.path.exists(junk):
+            os.remove(junk)
