@@ -1,4 +1,3 @@
-import os
 import click
 from termcolor import cprint
 
@@ -20,22 +19,6 @@ from cv_dot_py.api import *
 
 # cprint(fig, "cyan")
 # cprint("This script is written by Mohamed Rezk.\n", "green")
-
-
-# parser = argparse.ArgumentParser()
-
-# parser.add_argument("input_file", help="the path to yaml file containing the CV")
-# parser.add_argument(
-#     "-o", "--output", help="file name : output file name , output.pdf by default "
-# )
-# parser.add_argument("-t", "--texfile", help="texfile name : output.tex by default")
-
-# args = parser.parse_args()
-# cwd = os.getcwd()
-
-# input_filepath = args.input_file
-# output_filename = args.output if args.output else "output.pdf"
-# output_texfile = args.texfile if args.texfile else "output.tex"
 
 
 filename_arg = click.argument("filename", required=True, type=click.Path(exists=True))
@@ -76,6 +59,9 @@ include_tex_opt = click.option(
 @dryrun_opt
 @include_tex_opt
 def main(filename, output, dry_run, tex):
+    """
+        "Enjoy your well-structured CV pdf file" - Mohamed Rezk
+    """
     file_content_dict = load_yaml_file(filename)
     content = write_tex_file(file_content_dict)
     if not dry_run :
