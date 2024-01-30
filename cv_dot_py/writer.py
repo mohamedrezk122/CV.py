@@ -1,9 +1,9 @@
 import re
 from typing import Any
 
-from config import *
-from reader import *
-from primitives import *
+from cv_dot_py.config import *
+from cv_dot_py.reader import *
+from cv_dot_py.primitives import *
 
 
 INFO_SEP = " | "
@@ -151,7 +151,7 @@ def write_tex_file(file_content: dict) -> str:
                     tex_content = append_multicol(subfield, tex_content)
 
     except:
-        put_error("not able to process yaml data, please check the file")
+        put_error("Not able to process yaml data, please check the file")
 
     return file_header.replace("[[content]]", tex_content)
 
@@ -162,4 +162,4 @@ def export_tex_file(content: str, file_path: str):
             file.write(content)
             put_success(f"Your texfile has been written sucessfully to:\n {file_path}")
     except:
-        put_error("cannot access directory to write your texfile")
+        put_error("Cannot access directory to write your texfile")

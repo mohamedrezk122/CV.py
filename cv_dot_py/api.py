@@ -1,9 +1,7 @@
-import os
-import requests
 import requests_cache
 import urllib.parse
 
-from primitives import put_error, put_success
+from cv_dot_py.primitives import put_error, put_success
 
 def parse_url(tex_content: str):
     return urllib.parse.quote(tex_content)

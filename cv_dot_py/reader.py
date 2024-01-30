@@ -1,14 +1,15 @@
 import yaml
-from config import *
-from primitives import put_error
+
+from cv_dot_py.config import *
+from cv_dot_py.primitives import put_error
 
 
 def load_format_file(file):
     try:
-        with open(f"./snippets/format_{FORMAT}/{file}.tex", "r") as f:
+        with open(f"{ROOT_DIR}/snippets/format_{FORMAT}/{file}.tex", "r") as f:
             return f.read()
     except:
-        put_error("cannot find {file} format found")
+        put_error("Cannot find {file} format found")
 
 
 def load_yaml_file(file_path):
