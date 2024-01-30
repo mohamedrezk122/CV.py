@@ -1,7 +1,6 @@
 output/
 __pycache__/
+*/__pycache__/
 .mypy_cache/
-main.tex
-notes.txt
-test.tex
-
+*.tex
+*.egg-info
