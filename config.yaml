@@ -1,5 +1,5 @@
 # format number see snippets dir
-format : 2
+format : 1
 
 # pdf paper size
 geometry:

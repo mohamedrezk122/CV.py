@@ -1,6 +1,13 @@
-
-\vspace{.15cm}
-\begin{LARGE}
-\noindent\textbf{[[title]]}
-\vspace{2mm}\\
-\end{LARGE}
+%% note that this is a macro, written once and used many times 
+\def\includebar{[[BAR]]}
+\newcommand{\Title}[1]{
+  {
+    \LARGE
+    \ifnum\includebar=1
+        \rule[1mm]{2cm}{1.5mm}%
+        \hspace{2mm}
+    \fi
+    \bfseries #1 
+    [[SEP]]
+  }
+}

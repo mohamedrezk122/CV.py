@@ -31,7 +31,7 @@ def latex_emphasize(string: str) -> str:
 
 
 def latex_add_new_line(string: str) -> str:
-    return string + r"\\"
+    return string + r"\\" + "\n\t"
 
 
 def latex_underline(string: str) -> str:
@@ -42,3 +42,7 @@ def latex_underline(string: str) -> str:
 
 def latex_add_href(url: str, title: str) -> str:
     return r"\href{" + url + r"}{" + latex_underline(title) + r"}"
+
+# add vertical space in mm
+def add_space(space:int):
+    return "\n" + r"\vspace{" + str(space) + "mm" + "}"+ "\n"
