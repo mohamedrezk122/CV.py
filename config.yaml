@@ -3,9 +3,9 @@ format : 1
 
 # pdf paper size
 geometry:
-  unit  : mm   # other values include in or cm 
-  width : 210  # default width for A4 paper
-  height: 297  # default height for A4 paper
+  unit  : cm   # other values include in or cm 
+  width : 21  # default width for A4 paper
+  height: 29.7  # default height for A4 paper
 
 # pdf white margins
 margins:

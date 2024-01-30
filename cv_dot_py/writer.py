@@ -124,6 +124,7 @@ def write_tex_file(file_content: dict) -> str:
 
     file_header= write_tex_header()    
     file_header = adjust_document_margins(file_header)
+    file_header = adjust_document_geometry(file_header)
     tex_content = ""
 
     if file_content.get("info", 0):

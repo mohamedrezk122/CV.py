@@ -7,6 +7,7 @@ ROOT_DIR = Path(__file__).parent.parent
 DEFAULT_CONFIG_FILE = ROOT_DIR.joinpath('config.yaml')
 
 config_content = None
+
 def read_config(option: str) -> dict:
     global config_content
     # avoid reptitve calls to io 
@@ -28,6 +29,14 @@ def adjust_document_margins(header: str) -> str:
     }
     return batch_replace(header, replacements)
 
+def adjust_document_geometry(header:str) -> str:
+    geometry = read_config("geometry")
+    replacements = {
+        "[[width]]": geometry["width"],
+        "[[height]]": geometry["height"],
+        "[[g_unit]]": geometry["unit"],
+    }
+    return batch_replace(header, replacements)    
 
 # format id
 FORMAT = read_config("format")
