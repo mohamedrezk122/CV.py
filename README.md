@@ -7,6 +7,14 @@
 
 `CV.py`  is  a simple conversion of yaml file containing the CV information in a hierarchical order to a nice and elegant LaTeX file that is fed to an API for compilation. And you have your CV PDF file on local machine as simple as that. The main point is that you do not have to have LaTeX or know how it is written, just enjoy the good-looking, well-structured, and fault-proof PDF file. 
 
+## CHANGELOG
+- Replacing repeated snippets way to latex MACROS producing cleaner tex file.
+- Adding local compilation functionality (e.g. with `pdflatex`, `xelatex`, etc.) 
+- Adding configuration options in form of yaml file
+- Packaging the program for easy use across the local machine.
+- Replacing `argparse` with `Click`, simpler and more elegant.
+- Caching requests, avoiding unnecessary calls to the API if there is no change in the request content.
+``
 ## Installation
 
 - [optional] git, or you can download the source as `.zip` from github gui.
@@ -14,7 +22,7 @@
 git clone https://github.com/mohamedrezk122/CV.py
 ```
 - [Python 3](https://www.python.org/downloads/)  and pip 
-- Open ```cmd```  if you are on Windows, or ```terminal``` if you are Linux, Mac, or BSD. 
+- Open ```cmd```  if you are on Windows, or ```terminal``` in case of Linux, Mac, or BSD. 
 
 NOTE: This installation method makes the script accessible from any directory in your machine, which means that you don't have to be inside the code source dir to execute the program.  
 
@@ -41,6 +49,8 @@ Options:
   -o, --output PATH  Output file path, default output.pdf  [default: output]
   -d, --dry_run      Only write the tex file, NO pdf file will be produced
   -t, --tex          Write tex file along with the pdf
+  -l, --local TEXT   Compile the tex file locally without an api call, you
+                     should pass a compiler
   --help             Show this message and exit.
 ```
 
@@ -62,20 +72,25 @@ $ cv-dot-py input.yaml -o my_cv -d
 
 However, `-o` is an optional argument , if it is not specified like the command below , the script generates the PDF file under the name of  `output.pdf` likewise,  `output.tex`.    
 
-``` shell
+``` s
 $ cv-dot-py input.yaml 
 ```
 
 All output files will be written in current working directory (folder). Basically the one you call the script from.
 
+- use local compiler 
+``` sh
+$ cv-dot-py input.yaml -l pdflatex
+```
+
 ## yaml file format
 
 `NOTE`: The template does not reflect my actual CV information, so do not take it seriously.
 
-Please browse ```template.yaml``` under examples for additional help on  how the yaml file is properly formatted, also you can see the corresponding PDF file produced by the script under the name ```template.pdf```.
+Please browse `template.yaml` under examples for additional help on  how the yaml file is properly formatted, also you can see the corresponding PDF file produced by the script under the name `template.pdf`.
 The supported structure of the file:
 
-```info```, ```section```, ```entry``` , ```multicol```
+`info`, `section`, `entry` , `multicol`
 
 ### ```info```  field
 

@@ -57,7 +57,7 @@ include_tex_opt = click.option(
 compile_locally_opt = click.option(
     "-l",
     "--local",
-    help="Compile the tex file locally without an api call, you should pass a compiler, latex by default",
+    help="Compile the tex file locally without an api call, you should pass a compiler",
 )
 
 
