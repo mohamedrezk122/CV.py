@@ -5,6 +5,7 @@
 
 <p align="center"><img src="preview.png" /></p>
 
+
 `CV.py`  is  a simple conversion of yaml file containing the CV information in a hierarchical order to a nice and elegant LaTeX file that is fed to an API for compilation. And you have your CV PDF file on local machine as simple as that. The main point is that you do not have to have LaTeX or know how it is written, just enjoy the good-looking, well-structured, and fault-proof PDF file. 
 
 ## CHANGELOG
