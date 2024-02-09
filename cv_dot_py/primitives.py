@@ -33,6 +33,8 @@ def latex_emphasize(string: str) -> str:
 def latex_add_new_line(string: str) -> str:
     return string + r"\\" + "\n\t"
 
+def latex_noindent(string:str) -> str:
+    return r"\noindent " + string
 
 def latex_underline(string: str) -> str:
     if not string.strip():

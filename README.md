@@ -112,6 +112,19 @@ info:
     Blog : "https://mohamedrezk122.github.io/"
 ```
 
+### `objective` field
+
+- it is one-time field
+- `title` is optional, if it is not specified then the default title is `Objective`
+- `content` is required if it is not specified then the whole section will not be written, just the title.
+
+``` yaml
+objective :
+  title : Objective
+  content: "This is a short introduction about me. This introduction is not professionally written
+             but it is just a placeholder."
+```
+
 ### ```section```  field
 
 - section has to be unique , meaning no  two section have the same name , it shall take the form ```section+digit```  like ```section1``` or ```section+digit+digit``` like ```section12``` , these are the accepted formats.  

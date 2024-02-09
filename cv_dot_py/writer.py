@@ -38,7 +38,7 @@ def write_info(info_dict: dict) -> str:
 
 
 def write_section(title: str) -> str:
-    return  "\n" + r"\Title{" + title + "}\n"
+    return "\n" + r"\Title{" + title + "}\n"
 
 
 def write_url(entry: dict, content: str) -> str:
@@ -56,12 +56,14 @@ def write_generic_entry(
     if not points:
         return ""
 
-    date = r"\Date{" + year +"}\n"
-    if org :
-        org = latex_add_new_line(latex_emphasize(org)) 
-    points_string = "".join([latex_add_new_line(points[point]) for point in list(points.keys())[:-1]])
+    date = r"\Date{" + year + "}\n"
+    if org:
+        org = latex_add_new_line(latex_emphasize(org))
+    points_string = "".join(
+        [latex_add_new_line(points[point]) for point in list(points.keys())[:-1]]
+    )
     points_string += points[list(points.keys())[-1]]
-    entry = r"\Entry"+ "\n\t{" + title + "}\n\t{" + org + points_string + "\n}\n"
+    entry = r"\Entry" + "\n\t{" + title + "}\n\t{" + org + points_string + "\n}\n"
     return date + entry
 
 
@@ -82,7 +84,7 @@ def write_multi_column_entry(ncols: int, points: dict) -> str:
     for i in range(ncols):
         u = idx * (i + 1) if i < ncols - 1 else len(points)
         multi_col_template += write_column_entry(
-             '%.3f'%(1 / ncols), dict(list(points.items())[idx * i : u])
+            "%.3f" % (1 / ncols), dict(list(points.items())[idx * i : u])
         )
 
     return multi_col_template
@@ -109,20 +111,33 @@ def append_entry(subfield: dict, tex_content: str) -> str:
     entry_content = write_url(subfield, entry_content)
     return tex_content + entry_content
 
+
 def write_tex_header():
     file_header = load_format_file("header")
+    objective_macro = load_format_file("objective")
     date_macro = load_format_file("date")
     entry_macro = load_format_file("entry")
-    title_macro = load_format_file("section").replace("[[BAR]]", 
-        str(int(INCLUDE_BAR))).replace("[[SEP]]", add_space(SECTION_ENTRY_SEP))
-    return file_header.replace("[[macros]]", title_macro+date_macro+entry_macro)
+    title_macro = (
+        load_format_file("section")
+        .replace("[[BAR]]", str(int(INCLUDE_BAR)))
+        .replace("[[SEP]]", add_space(SECTION_ENTRY_SEP))
+    )
+    return file_header.replace("[[macros]]", title_macro + objective_macro + date_macro + entry_macro )
+
+
+def write_objective(title: str, objective_content: str) -> str:
+    content = "\n" + r"\Title{" + title + "}\n"
+    content += add_space(SECTION_ENTRY_SEP)
+    content += r"\objective {"  + objective_content + "}\n"
+    return latex_add_new_line(content)
+
 
 def write_tex_file(file_content: dict) -> str:
     section_pattern = re.compile(r"section\d+")
     entry_pattern = re.compile(r"entry\d+")
     multicol_pattern = re.compile(r"multicol\d+")
 
-    file_header= write_tex_header()    
+    file_header = write_tex_header()
     file_header = adjust_document_margins(file_header)
     file_header = adjust_document_geometry(file_header)
     tex_content = ""
@@ -133,9 +148,15 @@ def write_tex_file(file_content: dict) -> str:
     else:
         put_warning("No information section")
 
+    if file_content.get("objective", 0):
+        tex_content += write_objective(
+            file_content["objective"].get("title", "Objective"), file_content["objective"].get("content","")
+        )
+        tex_content += add_space(SECTION_SECTION_SEP)
+
     try:
         file_content.pop("info")
-        for i,field in enumerate(file_content):
+        for i, field in enumerate(file_content):
             if not bool(section_pattern.match(field)):
                 continue
             if i != 0:
@@ -144,19 +165,20 @@ def write_tex_file(file_content: dict) -> str:
             if len(field) < 2:
                 continue
 
-            for j,sub in enumerate(file_content[field]):
+            for j, sub in enumerate(file_content[field]):
                 subfield = file_content[field][sub]
                 if bool(entry_pattern.match(sub)):
                     tex_content = append_entry(subfield, tex_content)
                 elif bool(multicol_pattern.match(sub)):
                     tex_content = append_multicol(subfield, tex_content)
-                if j not in {0, len(file_content[field])-1}:
+                if j not in {0, len(file_content[field]) - 1}:
                     tex_content += add_space(ENTRY_ENTRY_SEP)
 
     except:
         put_error("Not able to process yaml data, please check the file")
 
     return file_header.replace("[[content]]", tex_content)
+
 
 def export_tex_file(content: str, file_path: str):
     try:

@@ -3,10 +3,15 @@ info:
   phone: "01222448102"
   email: "mohrizq895@gmail.com"
   secondemail: "2002114@eng.asu.edu.eg"
-  url:
+  url:  
     LinkedIn: "https://www.linkedin.com/in/mohamed-m-rezk/"
     Github: "https://github.com/mohamedrezk122"
     Blog : "https://mohamedrezk122.github.io/"
+
+objective :
+  title : Objective
+  content: "This is a short introduction about me. This introduction is not professionally written
+             but it is just a placeholder."
 
 section1 :
   title :  Education
@@ -43,14 +48,6 @@ section2 :
     url:
       Code: "https://github.com/mohamedrezk122/AE-software.git"
       Report: "https://drive.google.com/file/d/1nbaeNMwKy77YT5OaDclhSPKGJ-21Y4Bf/view?usp=share_link"
-
-  entry2 : 
-    title: Video Editor
-    org : CAMTECH CNC
-    year: Mar-Apr-2022
-    points:
-      1: Video editing for engineering courses, I used FFmpeg for bulk conversion,
-          Davinci Resolve scripting, and python to edit and create high-quality videos.
 
 section3 :
   title :   "Hackathons \\& Competitions"
